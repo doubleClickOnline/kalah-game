@@ -12,7 +12,7 @@ services:
     build:
       context: ./tests
       dockerfile: Dockerfile
-    command: sh -c "./wait-for-it.sh 127.0.0.1:9000 -t 10; cucumber --format pretty"
+    command: sh -c "./wait-for-it.sh 127.0.0.1:9000 -t 15; cucumber --format pretty"
     environment:
       HOST: 127.0.0.1
       PORT: 9000
