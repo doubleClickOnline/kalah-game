@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+
+  kalah:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    command: java -jar service.jar --server.port=9000 --server.address=127.0.0.1
+    network_mode: host
+
+  cucumber-bdd-tests:
+    build:
+      context: ./tests
+      dockerfile: Dockerfile
+    command: sh -c "./wait-for-it.sh 127.0.0.1:9000 -t 10; cucumber --format pretty"
+    environment:
+      HOST: 127.0.0.1
+      PORT: 9000
+    network_mode: host
