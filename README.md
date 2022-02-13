@@ -6,7 +6,7 @@
 
 ### Development prerequisites
 - Java 15
-- Gradle 6.x
+- Gradle 7.x
 
 ### Documentation
 - API documentation hosted in service(requires service started) [here](http://localhost:9000/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
